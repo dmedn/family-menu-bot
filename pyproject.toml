@@ -11,11 +11,11 @@ dependencies = [
     "aiogram>=3.31.0",
     "aiosqlite>=0.22.1",
     "pydantic-settings>=2.15.0",
-    "sqlalchemy>=2.1.4",
+    "sqlalchemy[asyncio]>=2.1.4",
 ]
 
 [project.scripts]
-family-menu-bot = "family_menu_bot:main"
+family-menu-bot = "family_menu_bot.__main__:main"
 
 [build-system]
 requires = ["uv_build>=0.13.0,<0.14.0"]
@@ -33,3 +33,5 @@ src = ["src"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "ASYNC", "RUF"]
+# Комментарии и docstring на русском: правила про "похожие" символы дают шум
+ignore = ["RUF001", "RUF002", "RUF003"]
